@@ -1,0 +1,319 @@
+@import "normalize.styl"
+@import "fonts.styl"
+
+/*
+	VARIABLES COLORES
+______________________________________________________
+*/
+
+fucsia = #AF336D
+gris_claro = #818181
+gris_oscuro = #333333
+gris_fondo = #F0F0F0
+
+a
+	text-decoration none
+
+body
+	font-family 'Varela Round', sans-serif
+	font-size 16px
+	background gris_fondo
+	
+img	
+	vertical-align top
+	
+/*
+	CLASES OOCSS
+______________________________________________________
+*/
+
+.border-bottom
+	border-bottom 1px solid gris_claro 
+
+.relative
+	position relative
+	
+.center-block
+	margin 0 auto
+	
+.center-text
+	text-align center
+	
+.right-text
+	text-align right	
+	
+.imageContainer
+	margin 0
+	
+.padding
+	padding 1em	
+	
+.padding-TopBotm
+	padding 1em	0
+	
+.left
+	float left
+
+.right
+	float right
+	
+.wrap
+	width 1000px
+	
+.round
+	border-radius 50%
+	overflow hidden									
+
+/*COMPONENTE HEADER*/
+
+.Header
+	height 3.5em		
+
+/*COMPONENTE MENU PRINCIPAL*/
+
+.Menu-button
+	color gris_oscuro
+	left .5em
+	margin-top -10px
+	position absolute
+	top 50%
+
+.Menu
+	display none	
+	
+.Menu-title
+	font-size 1.1em
+	line-height 3.5em	
+	text-align center
+
+/*COMPONENTE CONTAINER*/
+
+.Container
+	font-size 0
+	/*antes 1.4rem*/
+	padding 0.9rem
+	text-align center	
+
+/*COMPONENTE SONG*/
+
+.Song
+	display inline-block
+	font-size 1rem
+	margin-bottom 1em
+	margin-right 1em
+	text-align left
+	width 8rem
+	vertical-align: top;
+	
+	&:nth-child(even)
+		margin-right 0	
+	
+.Song-image
+	width 128px	
+	
+.Song-name
+	color gris_oscuro
+	
+.Song-author
+	color gris_claro
+	
+.Song-name
+.Song-author
+	margin .5em 0
+
+/*Vista de Reproducción*/
+	
+.Playing
+	&.small
+		width 20em
+
+.Playing-image
+	width 320px
+	
+.Actions
+	position absolute
+	bottom 0
+	left 0
+	right 0
+	background rgba(black,.3)
+	
+.Action
+	color white
+	margin-right .5em
+	font-size 1.2em
+	
+	&:last-child
+		margin-right 0
+		
+	&.gray
+		color gris_claro		
+
+/*BARRA PLAYING*/
+		
+.Progress
+	margin 1em 0
+	position relative
+	
+	.Progress-min		
+	.Progress-max
+		font-size .8em
+		top -5px
+		position absolute
+		
+	.Progress-min
+		left 0
+		
+	.Progress-max		
+		right 0				
+
+	.Progress-total
+		border-radius 5px
+		height 5px
+		background gris_claro
+		width 75%
+		margin 0 auto
+		
+	.Progress-state
+		border-radius 5px
+		height 5px
+		background fucsia
+		width 30%
+		position relative
+		
+	.Progress-circle
+		height 10px
+		border-radius 50%
+		background gris_oscuro
+		width 10px
+		position absolute
+		right 0	
+		top -2px
+	
+.Logo
+	display none		
+
+.input
+	border 1px solid gris_claro
+	height 2.5em
+	border-radius 5px
+	padding 0 1em 0 2em		
+
+.Search-icon
+	position absolute
+	top .8em
+	left .5em
+	color gris_claro
+	
+.close-icon
+	position absolute
+	top .5em
+	right .5em
+	color gris_claro
+	font-size 1.3em	
+		
+/*
+	TABLET
+______________________________________________________
+*/
+
+@media screen and (min-width:480px)	
+		
+	.Playing
+		
+		&.medium
+			width auto
+			
+	.Playing-image
+		width 100%
+				
+		
+	.Song
+		&:nth-child(even)
+			margin-right 1em
+			
+	
+/*
+	DESKTOP
+______________________________________________________
+*/
+
+@media screen and (min-width:1000px)
+
+	/*COMPONENTE HEADER*/
+
+	.Header
+		height auto
+		&.border-bottom
+			border-bottom none
+
+	/*COMPONENTE LOGO*/
+
+	.Logo
+		display block
+		background white
+		overflow hidden
+		padding 1.3em 0	
+
+	.Logo-image
+		width 122px
+		
+	/*COMPONENTE USUARIO*/
+	
+	.User
+		padding-left 2.3em	
+
+	.User-image
+		width 38px
+	
+	.User-name
+		color gris_claro
+		position relative
+		top 9px
+		margin-left .5em
+				
+		&:after
+			content ""
+			border-left 7px solid transparent
+			border-right 7px solid transparent
+			border-top 9px solid gris_claro
+			margin-left .4em
+			display inline-block
+						
+
+	.Menu
+		display block
+		height 3.6em
+		
+	.Menu-list
+		padding 0					
+		
+	.Menu-item
+		display inline-block
+		line-height 3.6em
+		padding-top 3px;		
+		
+	.Menu-link
+		padding 1em	
+		color gris_oscuro
+		text-transform uppercase		
+		&:hover
+			border-top 5px solid gris_claro
+		
+	/*Ocultamos el titulo y el boton del menu*/
+
+	.Menu-button
+	.Menu-title
+		display none		
+		
+	.Playing
+		
+		&.medium
+			width auto
+			
+	.Playing-image
+		width 100%
+				
+		
+	.Song
+		&:nth-child(even)
+			margin-right 1em		
