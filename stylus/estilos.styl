@@ -1,3 +1,4 @@
+@import "nib"
 @import "normalize.styl"
 @import "fonts.styl"
 
@@ -10,6 +11,7 @@ fucsia = #AF336D
 gris_claro = #818181
 gris_oscuro = #333333
 gris_fondo = #F0F0F0
+gris_intermedio = #4D4D4D
 
 a
 	text-decoration none
@@ -21,6 +23,10 @@ body
 	
 img	
 	vertical-align top
+	
+ul
+	margin 0
+	padding 0	
 	
 /*
 	CLASES OOCSS
@@ -67,7 +73,31 @@ ______________________________________________________
 /*COMPONENTE HEADER*/
 
 .Header
-	height 3.5em		
+	height 3.5em
+
+/*COMPONENTE LOGO*/
+	
+.Logo
+	display none		
+
+.input
+	border 1px solid gris_claro
+	height 2.5em
+	border-radius 5px
+	padding 0 1em 0 2em		
+
+.Search-icon
+	position absolute
+	top .8em
+	left .5em
+	color gris_claro
+	
+.close-icon
+	position absolute
+	top .5em
+	right .5em
+	color gris_claro
+	font-size 1.3em				
 
 /*COMPONENTE MENU PRINCIPAL*/
 
@@ -86,9 +116,9 @@ ______________________________________________________
 	line-height 3.5em	
 	text-align center
 
-/*COMPONENTE CONTAINER*/
+/*VISTA TOP HITS*/
 
-.Container
+.Tophits
 	font-size 0
 	/*antes 1.4rem*/
 	padding 0.9rem
@@ -121,7 +151,7 @@ ______________________________________________________
 .Song-author
 	margin .5em 0
 
-/*Vista de Reproducción*/
+/*VISTA DE REPRODUCCIÓN*/
 	
 .Playing
 	&.small
@@ -146,7 +176,14 @@ ______________________________________________________
 		margin-right 0
 		
 	&.gray
-		color gris_claro		
+		color gris_claro
+		
+.Play
+	.Action
+		margin-right 1.9em	
+		
+		&:last-child
+			margin-right 0			
 
 /*BARRA PLAYING*/
 		
@@ -179,6 +216,7 @@ ______________________________________________________
 		background fucsia
 		width 30%
 		position relative
+		animation 10s Estado linear infinite
 		
 	.Progress-circle
 		height 10px
@@ -188,35 +226,54 @@ ______________________________________________________
 		position absolute
 		right 0	
 		top -2px
+		animation 1s Circulo infinite
 	
-.Logo
-	display none		
+/*VISTA DE ÁLBUM*/					
 
-.input
-	border 1px solid gris_claro
-	height 2.5em
-	border-radius 5px
-	padding 0 1em 0 2em		
-
-.Search-icon
-	position absolute
-	top .8em
-	left .5em
-	color gris_claro
+.Album		
+	width auto	
+	vertical-align top
+	padding 0 2em	
 	
-.close-icon
-	position absolute
-	top .5em
-	right .5em
-	color gris_claro
-	font-size 1.3em	
+.Album-list		
+	list-style none		
+	
+.Album-item
+	color gris_intermedio
+	padding 1em	0
+	&:first-child
+		border-top 1px solid gris_claro
+		
+	.Action
+		font-size .8em	
+
+/*
+	ANIMACIONES
+______________________________________________________
+*/
+
+@keyframes Estado
+	0%
+		width 0%
+	100%
+		width 100%
+		
+@keyframes Circulo
+	0%
+		transform scale(1)
+	100%
+		transform scale(2)
+		opacity 0			
 		
 /*
 	TABLET
 ______________________________________________________
 */
 
-@media screen and (min-width:480px)	
+	/*antes 480px*/
+@media screen and (min-width:460px)	
+
+	/*VISTA DE REPRODUCCIÓN*/
 		
 	.Playing
 		
@@ -225,7 +282,8 @@ ______________________________________________________
 			
 	.Playing-image
 		width 100%
-				
+		
+	/*COMPONENTE SONG*/			
 		
 	.Song
 		&:nth-child(even)
@@ -260,7 +318,8 @@ ______________________________________________________
 	/*COMPONENTE USUARIO*/
 	
 	.User
-		padding-left 2.3em	
+		padding-left 2.3em
+		width: 30%;	
 
 	.User-image
 		width 38px
@@ -278,7 +337,8 @@ ______________________________________________________
 			border-top 9px solid gris_claro
 			margin-left .4em
 			display inline-block
-						
+		
+	/*COMPONENTE MENU PRINCIPAL*/					
 
 	.Menu
 		display block
@@ -303,17 +363,61 @@ ______________________________________________________
 
 	.Menu-button
 	.Menu-title
-		display none		
+		display none
+		
+	/*VISTA REPRODUCCIÓN / ÁLBUM */	
+		
+	.Music
+		padding-top 2em
+		margin 0 auto
+		width 62.5em		
+		overflow hidden
+		
+	/*VISTA DE REPRODUCCIÓN*/				
 		
 	.Playing
-		
-		&.medium
-			width auto
+		float left		
+		&.large
+			width 23.4em
+			
+		.Description
+			display none	
 			
 	.Playing-image
 		width 100%
 				
-		
+	.Play
+		.Action
+			margin-right .9em
+			font-size 1.7em	
+			
+			&:last-child
+				margin-right 0
+
+	/*COMPONENTE SONG*/	
+
 	.Song
 		&:nth-child(even)
-			margin-right 1em		
+			margin-right 1em
+			
+	/*VISTA DE ÁLBUM*/					
+
+	.Album		
+		width 29.3em
+		border-left 1px solid gris_claro
+		vertical-align top
+		padding 0 2em
+		float right
+		
+		.Song-name
+			font-size 1.3em
+
+		
+	.Album-list		
+		list-style none		
+		
+	.Album-item
+		color gris_intermedio
+		padding 1em	0
+		&:first-child
+			border-top 1px solid gris_claro			
