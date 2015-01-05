@@ -101,20 +101,20 @@ ______________________________________________________
 
 /*COMPONENTE MENU PRINCIPAL*/
 
-.Menu-button
-	color gris_oscuro
-	left .5em
-	margin-top -10px
-	position absolute
-	top 50%
-
 .Menu
-	display none	
+	display none
 	
-.Menu-title
-	font-size 1.1em
-	line-height 3.5em	
-	text-align center
+	&-button
+		color gris_oscuro
+		left .5em
+		margin-top -10px
+		position absolute
+		top 50%	
+	
+	&-title
+		font-size 1.1em
+		line-height 3.5em	
+		text-align center
 
 /*VISTA TOP HITS*/
 
@@ -138,18 +138,18 @@ ______________________________________________________
 	&:nth-child(even)
 		margin-right 0	
 	
-.Song-image
-	width 128px	
+	&-image
+		width 128px	
 	
-.Song-name
-	color gris_oscuro
+	&-name
+		color gris_oscuro
 	
-.Song-author
-	color gris_claro
+	&-author
+		color gris_claro
 	
-.Song-name
-.Song-author
-	margin .5em 0
+	&-name
+	&-author
+		margin .5em 0
 
 /*VISTA DE REPRODUCCIÓN*/
 	
@@ -157,8 +157,8 @@ ______________________________________________________
 	&.small
 		width 20em
 
-.Playing-image
-	width 320px
+	&-image
+		width 320px
 	
 .Actions
 	background rgba(black,.3)
@@ -191,26 +191,26 @@ ______________________________________________________
 	margin 1em 0
 	position relative
 	
-	.Progress-min		
-	.Progress-max
+	&-min		
+	&-max
 		font-size .8em
 		position absolute
 		top -5px
 		
-	.Progress-min
+	&-min
 		left 0
 		
-	.Progress-max		
+	&-max		
 		right 0				
 
-	.Progress-total
+	&-total
 		background gris_claro
 		border-radius 5px
 		height 5px
 		margin 0 auto
 		width 75%
 		
-	.Progress-state
+	&-state
 		animation 10s Estado linear infinite
 		background fucsia
 		border-radius 5px
@@ -218,7 +218,7 @@ ______________________________________________________
 		position relative
 		width 30%
 		
-	.Progress-circle
+	&-circle
 		animation 1s Circulo infinite
 		background gris_oscuro
 		border-radius 50%
@@ -235,14 +235,14 @@ ______________________________________________________
 	vertical-align top
 	width auto	
 	
-.Album-list		
-	list-style none		
+	&-list		
+		list-style none		
 	
-.Album-item
-	color gris_intermedio
-	padding 1em	0
-	&:first-child
-		border-top 1px solid gris_claro
+	&-item
+		color gris_intermedio
+		padding 1em	0
+		&:first-child
+			border-top 1px solid gris_claro
 		
 	.Action
 		font-size .8em	
@@ -280,8 +280,8 @@ ______________________________________________________
 		&.medium
 			width auto
 			
-	.Playing-image
-		width 100%
+		&-image
+			width 100%
 		
 	/*COMPONENTE SONG*/			
 		
@@ -312,8 +312,8 @@ ______________________________________________________
 		overflow hidden
 		padding 1.3em 0	
 
-	.Logo-image
-		width 122px
+		&-image
+			width 122px
 		
 	/*COMPONENTE USUARIO*/
 	
@@ -321,22 +321,22 @@ ______________________________________________________
 		padding-left 2.3em
 		width: 30%;	
 
-	.User-image
-		width 38px
+		&-image
+			width 38px
 	
-	.User-name
-		color gris_claro
-		margin-left .5em
-		position relative
-		top 9px
+		&-name
+			color gris_claro
+			margin-left .5em
+			position relative
+			top 9px
 				
-		&:after
-			border-left 7px solid transparent
-			border-right 7px solid transparent
-			border-top 9px solid gris_claro
-			content ""
-			display inline-block
-			margin-left .4em
+			&:after
+				border-left 7px solid transparent
+				border-right 7px solid transparent
+				border-top 9px solid gris_claro
+				content ""
+				display inline-block
+				margin-left .4em
 		
 	/*COMPONENTE MENU PRINCIPAL*/					
 
@@ -344,27 +344,28 @@ ______________________________________________________
 		display block
 		height 3.6em
 		
-	.Menu-list
-		padding 0					
-		
-	.Menu-item
-		display inline-block
-		line-height 3.6em
-		padding-top 3px;		
-		
-	.Menu-link
-		color gris_oscuro
-		padding 1em	
-		text-transform uppercase		
-		&:hover
-			border-top 5px solid gris_claro
-		
-	/*Ocultamos el titulo y el boton del menu*/
+		/*Ocultamos el titulo y el boton del menu*/
 
-	.Menu-button
-	.Menu-title
-		display none
+		&-button
+		&-title
+			display none
 		
+		&-list
+			padding 0					
+		
+		&-item
+			display inline-block
+			line-height 3.6em
+			padding-top 3px;		
+		
+		&-link
+			color gris_oscuro
+			padding 1em	
+			text-transform uppercase		
+			&:hover
+				border-top 5px solid gris_claro		
+	
+			
 	/*VISTA REPRODUCCIÓN / ÁLBUM */	
 		
 	.Music
@@ -376,16 +377,17 @@ ______________________________________________________
 	/*VISTA DE REPRODUCCIÓN*/				
 		
 	.Playing
-		float left		
+		float left
+		
+		&-image
+			width 100%
+
 		&.large
 			width 23.4em
 			
 		.Description
-			display none	
-			
-	.Playing-image
-		width 100%
-				
+			display none		
+					
 	.Play
 		.Action
 			font-size 1.7em	
@@ -409,15 +411,14 @@ ______________________________________________________
 		vertical-align top
 		width 29.3em
 		
+		&-list		
+			list-style none		
+		
+		&-item
+			color gris_intermedio
+			padding 1em	0
+			&:first-child
+				border-top 1px solid gris_claro
+				
 		.Song-name
-			font-size 1.3em
-
-		
-	.Album-list		
-		list-style none		
-		
-	.Album-item
-		color gris_intermedio
-		padding 1em	0
-		&:first-child
-			border-top 1px solid gris_claro			
+			font-size 1.3em					
